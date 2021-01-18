@@ -385,6 +385,33 @@
       <div class="clearfix"></div>
     </div>
   </div>
+
+  
+    <section id="comments" style="margin:10px;padding:10px;background:#fff;">
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'true' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "x4vK6NKjGP1VyxFvykeywDkw-gzGzoHsz",
+            app_key: "iRxdLiHhczUC4I51dwkz0qpv",
+            placeholder: "这里留言。。",
+            avatar:""
+        });
+    }
+</script>
+    </section>
+  
+  
+
+
+
 </article>
 
   
@@ -431,28 +458,6 @@
 
   
 
-
-
-  <section id="comments" style="margin:10px;padding:10px;background:#fff;">
-    <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'true' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "x4vK6NKjGP1VyxFvykeywDkw-gzGzoHsz",
-            app_key: "iRxdLiHhczUC4I51dwkz0qpv",
-            placeholder: "这里留言。。",
-            avatar:""
-        });
-    }
-</script>
-  </section>
 
 
           </div>
