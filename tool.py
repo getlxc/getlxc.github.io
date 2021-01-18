@@ -131,7 +131,7 @@ def handle_photo():
             list_info[-1]['arr']['type'].append('image')
     list_info.reverse()  # 翻转
     final_dict = {"list": list_info}
-    with open("../lawlite19.github.io/source/photos/data.json","w") as fp:
+    with open("../source/photos/data.json","w") as fp:
         json.dump(final_dict, fp)
 
 def cut_photo():
@@ -168,7 +168,7 @@ def git_operation():
     '''
     os.system('git add --all')
     os.system('git commit -m "add photos"')
-    os.system('git push origin master')
+    os.system('git push origin photo')
 
 if __name__ == "__main__":
     cut_photo()        # 裁剪图片，裁剪成正方形，去中间部分
