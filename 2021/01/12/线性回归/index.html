@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="https://getlxc.github.io">
   <title>线性回归 | 刘星辰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="线性回归是机器学习最基本的智能算法，也是最容易上手的机器学习算法，简而言之，他就是说的是 一个事件的多个因素造成的，每一个因素都是 $\theta_{i}$ 的因子，从而决定一个事件的走向。本文从基本和公式推导到算法实现都详细介绍了线性回归的算法，欢迎大家留言交流。">
+  <meta name="description" content="线性回归是机器学习最基本的智能算法，也是最容易上手的机器学习算法，简而言之，他就是说的是 一个事件的多个因素造成的，每一个因素都是 $\theta_{i}$ 的因子，从而决定一个事件的走向。本文从基本和公式推导到算法实现都详细介绍了线性回归的算法，欢迎大家留言交流啊啊。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线性回归">
 <meta property="og:url" content="https://getlxc.github.io/2021/01/12/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/index.html">
 <meta property="og:site_name" content="刘星辰的博客">
-<meta property="og:description" content="线性回归是机器学习最基本的智能算法，也是最容易上手的机器学习算法，简而言之，他就是说的是 一个事件的多个因素造成的，每一个因素都是 $\theta_{i}$ 的因子，从而决定一个事件的走向。本文从基本和公式推导到算法实现都详细介绍了线性回归的算法，欢迎大家留言交流。">
+<meta property="og:description" content="线性回归是机器学习最基本的智能算法，也是最容易上手的机器学习算法，简而言之，他就是说的是 一个事件的多个因素造成的，每一个因素都是 $\theta_{i}$ 的因子，从而决定一个事件的走向。本文从基本和公式推导到算法实现都详细介绍了线性回归的算法，欢迎大家留言交流啊啊。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://getlxc.github.io/2021/01/12/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/20200812204304301.png">
 <meta property="og:image" content="https://getlxc.github.io/2021/01/12/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/20200813215918452.png">
@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://getlxc.github.io/2021/01/12/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/20200813215641359.png">
 <meta property="og:image" content="https://getlxc.github.io/2021/01/12/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/20200813214542383.png">
 <meta property="article:published_time" content="2021-01-12T04:32:16.000Z">
-<meta property="article:modified_time" content="2021-01-18T09:45:26.116Z">
+<meta property="article:modified_time" content="2021-01-18T12:25:31.504Z">
 <meta property="article:author" content="GetLxc">
 <meta property="article:tag" content="线性回归">
 <meta property="article:tag" content="机器学习">
@@ -71,16 +71,14 @@
 	        
 				<li><a href="/archives">归档</a></li>
 	        
+				<li><a href="/photos">相册</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
     			
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
     			
             
     			
@@ -125,6 +123,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -141,11 +141,13 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 25%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/archives">归档</a></li>
+					<li style="width: 25%"><a href="/archives">归档</a></li>
+		        
+					<li style="width: 25%"><a href="/photos">相册</a></li>
 		        
 				</ul>
 			</nav>
@@ -187,7 +189,7 @@
       
         <!-- 
         
-          <p>线性回归是机器学习最基本的智能算法，也是最容易上手的机器学习算法，简而言之，他就是说的是 一个事件的多个因素造成的，每一个因素都是 $\theta_{i}$ 的因子，从而决定一个事件的走向。本文从基本和公式推导到算法实现都详细介绍了线性回归的算法，欢迎大家留言交流。</p>
+          <p>线性回归是机器学习最基本的智能算法，也是最容易上手的机器学习算法，简而言之，他就是说的是 一个事件的多个因素造成的，每一个因素都是 $\theta_{i}$ 的因子，从而决定一个事件的走向。本文从基本和公式推导到算法实现都详细介绍了线性回归的算法，欢迎大家留言交流啊啊。</p>
 <a id="more"></a>
 
 <h2 id="前期介绍-问答呈现"><a href="#前期介绍-问答呈现" class="headerlink" title="前期介绍(问答呈现)"></a>前期介绍(问答呈现)</h2><ul>
@@ -239,7 +241,7 @@
 </ol>
 <p><img src="/2021/01/12/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/20200813215641359.png" alt="在这里插入图片描述"><br>有了归一化要迭代百万级才能（因为都缩小到很小的范围内，导数都很小，改变慢）：</p>
 <ol start="2">
-<li>学习率怎么选<br>我们的数据值大小很大时(&gt;100)，我们需要把学习率设置的小一点 10E-6就可，否则一点点的改变也许就跳过了最优解进入了发散的状态。<br><img src="/2021/01/12/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/20200813214542383.png" alt="在这里插入图片描述"><h2 id="感谢一下博客或者up主让我明白了梯度下降"><a href="#感谢一下博客或者up主让我明白了梯度下降" class="headerlink" title="感谢一下博客或者up主让我明白了梯度下降"></a>感谢一下博客或者up主让我明白了梯度下降</h2></li>
+<li>学习率怎么选<br>我们的数据值大小很大时(&gt;100)，我们需要把学习率设置的小一点 10E-6就可，否则一点点的改变也许就跳过了最优解进入了发散的状态。<br><img src="/2021/01/12/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/20200813214542383.png" alt="在这里插入图片描述">{:height=”100” width=”100”}<h2 id="感谢一下博客或者up主让我明白了梯度下降"><a href="#感谢一下博客或者up主让我明白了梯度下降" class="headerlink" title="感谢一下博客或者up主让我明白了梯度下降"></a>感谢一下博客或者up主让我明白了梯度下降</h2></li>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41800366/article/details/86583789">有计算过程，很详细</a></li>
 <li><a target="_blank" rel="noopener" href="https://space.bilibili.com/410922661">B站up主链接</a></li>
 <li><a target="_blank" rel="noopener" href="https://github.com/lawlite19/MachineLearning_Python">Python算法借鉴</a></li>
@@ -248,7 +250,7 @@
 
            -->
 
-        <p>线性回归是机器学习最基本的智能算法，也是最容易上手的机器学习算法，简而言之，他就是说的是 一个事件的多个因素造成的，每一个因素都是 $\theta_{i}$ 的因子，从而决定一个事件的走向。本文从基本和公式推导到算法实现都详细介绍了线性回归的算法，欢迎大家留言交流。</p>
+        <p>线性回归是机器学习最基本的智能算法，也是最容易上手的机器学习算法，简而言之，他就是说的是 一个事件的多个因素造成的，每一个因素都是 $\theta_{i}$ 的因子，从而决定一个事件的走向。本文从基本和公式推导到算法实现都详细介绍了线性回归的算法，欢迎大家留言交流啊啊。</p>
 <a id="more"></a>
 
 <h2 id="前期介绍-问答呈现"><a href="#前期介绍-问答呈现" class="headerlink" title="前期介绍(问答呈现)"></a>前期介绍(问答呈现)</h2><ul>
@@ -300,7 +302,7 @@
 </ol>
 <p><img src="/2021/01/12/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/20200813215641359.png" alt="在这里插入图片描述"><br>有了归一化要迭代百万级才能（因为都缩小到很小的范围内，导数都很小，改变慢）：</p>
 <ol start="2">
-<li>学习率怎么选<br>我们的数据值大小很大时(&gt;100)，我们需要把学习率设置的小一点 10E-6就可，否则一点点的改变也许就跳过了最优解进入了发散的状态。<br><img src="/2021/01/12/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/20200813214542383.png" alt="在这里插入图片描述"><h2 id="感谢一下博客或者up主让我明白了梯度下降"><a href="#感谢一下博客或者up主让我明白了梯度下降" class="headerlink" title="感谢一下博客或者up主让我明白了梯度下降"></a>感谢一下博客或者up主让我明白了梯度下降</h2></li>
+<li>学习率怎么选<br>我们的数据值大小很大时(&gt;100)，我们需要把学习率设置的小一点 10E-6就可，否则一点点的改变也许就跳过了最优解进入了发散的状态。<br><img src="/2021/01/12/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/20200813214542383.png" alt="在这里插入图片描述">{:height=”100” width=”100”}<h2 id="感谢一下博客或者up主让我明白了梯度下降"><a href="#感谢一下博客或者up主让我明白了梯度下降" class="headerlink" title="感谢一下博客或者up主让我明白了梯度下降"></a>感谢一下博客或者up主让我明白了梯度下降</h2></li>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41800366/article/details/86583789">有计算过程，很详细</a></li>
 <li><a target="_blank" rel="noopener" href="https://space.bilibili.com/410922661">B站up主链接</a></li>
 <li><a target="_blank" rel="noopener" href="https://github.com/lawlite19/MachineLearning_Python">Python算法借鉴</a></li>
@@ -560,25 +562,17 @@ MathJax.Hub.Queue(function() {
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -653,38 +647,6 @@ MathJax.Hub.Queue(function() {
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
     
 
     
