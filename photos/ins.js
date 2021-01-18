@@ -116,15 +116,13 @@
         var data = res.list[j].arr;
         var liTmpl = "";
         for (var i = 0, len = data.link.length; i < len; i++) {
-          var minSrc = 'http://cdn.jsdelivr.net/gh/getlxc/getlxc.github.io@photo/min_photos/' + data.link[i];
-          //https://raw.githubusercontent.com/getlxc/getlxc.github.io/photo/photos/2020-12-30_%E4%B8%8A%E6%B5%B7%E5%A4%96%E6%BB%A9%E6%8B%8D%E7%85%A7.png
-          // https://github.com/getlxc/getlxc.github.io/raw/photo/photos/2020-12-30_%E4%B8%8A%E6%B5%B7%E5%A4%96%E6%BB%A9%E6%8B%8D%E7%85%A7.png
-          var src = 'https://cdn.jsdelivr.net/gh/getlxc/getlxc.github.io@photo/photos/' + data.link[i];
+          var minSrc = 'https://cdn.jsdelivr.net/gh/getlxc/getlxc.github.io@photo/min_photos/' + data.link[i];
+          var src    = 'https://cdn.jsdelivr.net/gh/getlxc/getlxc.github.io@photo/photos/' + data.link[i];
           var type = data.type[i];
           var target = src + (type === 'video' ? '.mp4' : '.jpg');
           src += '';
-
-          liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">\
+console.log(minSrc);
+          liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope itemtype>\
                 <a href="' + src + '" itemprop="contentUrl" data-size="1080x1080" data-type="' + type + '" data-target="' + src + '">\
                   <img class="reward-img" data-type="' + type + '" data-src="' + minSrc + '" src="/photos/ '+ minSrc + '" itemprop="thumbnail" onload="lzld(this)">\
                 </a>\
@@ -135,7 +133,7 @@
         <ul class="img-box-ul">' + liTmpl + '</ul>\
         </section>';
       }
-      document.querySelector('.instagram').innerHTML = '<div class="photos" itemscope itemtype="http://schema.org/ImageGallery">' + ulTmpl + '</div>';
+      document.querySelector('.instagram').innerHTML = '<div class="photos" itemscope itemtype>' + ulTmpl + '</div>';
       createVideoIncon();
       _view2.default.init();
     };
