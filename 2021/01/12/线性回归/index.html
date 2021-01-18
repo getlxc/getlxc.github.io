@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="https://getlxc.github.io">
   <title>线性回归 | 刘星辰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前期介绍(问答呈现) 什么是线性回归？当我们求解一个问题，这个问题跟n个因素相关。我们需要求出每一个因素的权重$\theta_{i}(1&lt;&#x3D;i&lt;&#x3D;n)$ ,这个过程就叫做线性回归。比如我们求一个地区的房价，最起码和房价相关的因素应该有 地区、面积、户型 等，我们就可以得到下面表达式。其中$\theta_{0}$ 是常数项的一个权值，也就是我们初中的y&#x3D;ax+b中的b，而$x_{0}$">
+  <meta name="description" content="线性回归是机器学习最基本的智能算法，也是最容易上手的机器学习算法，简而言之，他就是说的是 一个事件的多个因素造成的，每一个因素都是 $\theta_{i}$ 的因子，从而决定一个事件的走向。本文从基本和公式推导到算法实现都详细介绍了线性回归的算法，欢迎大家留言交流。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线性回归">
 <meta property="og:url" content="https://getlxc.github.io/2021/01/12/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/index.html">
 <meta property="og:site_name" content="刘星辰的博客">
-<meta property="og:description" content="前期介绍(问答呈现) 什么是线性回归？当我们求解一个问题，这个问题跟n个因素相关。我们需要求出每一个因素的权重$\theta_{i}(1&lt;&#x3D;i&lt;&#x3D;n)$ ,这个过程就叫做线性回归。比如我们求一个地区的房价，最起码和房价相关的因素应该有 地区、面积、户型 等，我们就可以得到下面表达式。其中$\theta_{0}$ 是常数项的一个权值，也就是我们初中的y&#x3D;ax+b中的b，而$x_{0}$">
+<meta property="og:description" content="线性回归是机器学习最基本的智能算法，也是最容易上手的机器学习算法，简而言之，他就是说的是 一个事件的多个因素造成的，每一个因素都是 $\theta_{i}$ 的因子，从而决定一个事件的走向。本文从基本和公式推导到算法实现都详细介绍了线性回归的算法，欢迎大家留言交流。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200812204304301.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dldEx4Yw==,size_16,color_FFFFFF,t_70#pic_center">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200813215918452.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dldEx4Yw==,size_16,color_FFFFFF,t_70#pic_center">
@@ -21,9 +21,10 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200813215641359.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dldEx4Yw==,size_16,color_FFFFFF,t_70#pic_center">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200813214542383.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dldEx4Yw==,size_16,color_FFFFFF,t_70#pic_center">
 <meta property="article:published_time" content="2021-01-12T04:32:16.000Z">
-<meta property="article:modified_time" content="2021-01-18T07:04:42.170Z">
+<meta property="article:modified_time" content="2021-01-18T09:37:21.152Z">
 <meta property="article:author" content="GetLxc">
-<meta property="article:tag" content="线性回归 机器学习">
+<meta property="article:tag" content="线性回归">
+<meta property="article:tag" content="机器学习">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200812204304301.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dldEx4Yw==,size_16,color_FFFFFF,t_70#pic_center">
   
@@ -67,8 +68,6 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
-	        
-				<li><a href="/categories">分类</a></li>
 	        
 				<li><a href="/archives">归档</a></li>
 	        
@@ -126,8 +125,6 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -144,13 +141,11 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 		        
-					<li style="width: 25%"><a href="/categories">分类</a></li>
-		        
-					<li style="width: 25%"><a href="/archives">归档</a></li>
+					<li style="width: 33.333333333333336%"><a href="/archives">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -190,11 +185,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <!-- 
         
-        
-          <h2 id="前期介绍-问答呈现"><a href="#前期介绍-问答呈现" class="headerlink" title="前期介绍(问答呈现)"></a>前期介绍(问答呈现)</h2><ul>
-<li><strong>什么是线性回归？</strong><br>当我们求解一个问题，这个问题跟n个因素相关。我们需要求出每一个因素的权重$\theta_{i}(1&lt;=i&lt;=n)$ ,这个过程就叫做线性回归。<br>比如我们求一个地区的房价，最起码和房价相关的因素应该有 <strong>地区、面积、户型</strong> 等，我们就可以得到下面表达式。其中$\theta_{0}$ 是常数项的一个权值，也就是我们初中的y=ax+b中的b，而$x_{0}$ 只是为了配合前面的<strong>b</strong> 而特地添加的，并无实际的意义，一般设为1，这样 1*b=b。不影响最后的结果。</li>
+          <p>线性回归是机器学习最基本的智能算法，也是最容易上手的机器学习算法，简而言之，他就是说的是 一个事件的多个因素造成的，每一个因素都是 $\theta_{i}$ 的因子，从而决定一个事件的走向。本文从基本和公式推导到算法实现都详细介绍了线性回归的算法，欢迎大家留言交流。</p>
+<a id="more"></a>
+
+<h2 id="前期介绍-问答呈现"><a href="#前期介绍-问答呈现" class="headerlink" title="前期介绍(问答呈现)"></a>前期介绍(问答呈现)</h2><ul>
+<li><strong>什么是线性回归？</strong><br>当我们求解一个问题，这个问题跟n个因素相关。我们需要求出每一个因素的权重$\theta_{i}(1&lt;=i&lt;=n)$ ,这个过程就叫做线性回归。</li>
 </ul>
+<p>比如我们求一个地区的房价，最起码和房价相关的因素应该有 <strong>地区、面积、户型</strong> 等，我们就可以得到下面表达式。其中$\theta_{0}$ 是常数项的一个权值，也就是我们初中的y=ax+b中的b，而$x_{0}$ 只是为了配合前面的<strong>b</strong> 而特地添加的，并无实际的意义，一般设为1，这样 1*b=b。不影响最后的结果。</p>
 <p>$$Y_{price}=\theta_{0}x_{0}+\theta_{1}x_{1}+\theta_{2}x_{2}+…+\theta_{n}x_{n}$$</p>
 <p>   而求解$\theta_{i}$的过程我们就叫做线性回归。</p>
 <ul>
@@ -247,11 +246,15 @@
 <li>欢迎留言交流</li>
 </ol>
 
-          
+           -->
 
-        <!-- <h2 id="前期介绍-问答呈现"><a href="#前期介绍-问答呈现" class="headerlink" title="前期介绍(问答呈现)"></a>前期介绍(问答呈现)</h2><ul>
-<li><strong>什么是线性回归？</strong><br>当我们求解一个问题，这个问题跟n个因素相关。我们需要求出每一个因素的权重$\theta_{i}(1&lt;=i&lt;=n)$ ,这个过程就叫做线性回归。<br>比如我们求一个地区的房价，最起码和房价相关的因素应该有 <strong>地区、面积、户型</strong> 等，我们就可以得到下面表达式。其中$\theta_{0}$ 是常数项的一个权值，也就是我们初中的y=ax+b中的b，而$x_{0}$ 只是为了配合前面的<strong>b</strong> 而特地添加的，并无实际的意义，一般设为1，这样 1*b=b。不影响最后的结果。</li>
+        <p>线性回归是机器学习最基本的智能算法，也是最容易上手的机器学习算法，简而言之，他就是说的是 一个事件的多个因素造成的，每一个因素都是 $\theta_{i}$ 的因子，从而决定一个事件的走向。本文从基本和公式推导到算法实现都详细介绍了线性回归的算法，欢迎大家留言交流。</p>
+<a id="more"></a>
+
+<h2 id="前期介绍-问答呈现"><a href="#前期介绍-问答呈现" class="headerlink" title="前期介绍(问答呈现)"></a>前期介绍(问答呈现)</h2><ul>
+<li><strong>什么是线性回归？</strong><br>当我们求解一个问题，这个问题跟n个因素相关。我们需要求出每一个因素的权重$\theta_{i}(1&lt;=i&lt;=n)$ ,这个过程就叫做线性回归。</li>
 </ul>
+<p>比如我们求一个地区的房价，最起码和房价相关的因素应该有 <strong>地区、面积、户型</strong> 等，我们就可以得到下面表达式。其中$\theta_{0}$ 是常数项的一个权值，也就是我们初中的y=ax+b中的b，而$x_{0}$ 只是为了配合前面的<strong>b</strong> 而特地添加的，并无实际的意义，一般设为1，这样 1*b=b。不影响最后的结果。</p>
 <p>$$Y_{price}=\theta_{0}x_{0}+\theta_{1}x_{1}+\theta_{2}x_{2}+…+\theta_{n}x_{n}$$</p>
 <p>   而求解$\theta_{i}$的过程我们就叫做线性回归。</p>
 <ul>
@@ -303,7 +306,7 @@
 <li><a target="_blank" rel="noopener" href="https://github.com/lawlite19/MachineLearning_Python">Python算法借鉴</a></li>
 <li>欢迎留言交流</li>
 </ol>
- -->
+
       
 
       
@@ -337,7 +340,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">线性回归 机器学习</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">线性回归</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
         		</li>
       		
 		</ul>
@@ -592,11 +599,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">线性回归 机器学习</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color5">线性回归</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
             
             <div class="clearfix"></div>
