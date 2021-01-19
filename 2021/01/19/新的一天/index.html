@@ -16,7 +16,7 @@
 <meta property="og:description" content="今天部署好了博客的大部分功能，开始以后每天写博客了。哈哈哈">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-01-19T00:46:25.000Z">
-<meta property="article:modified_time" content="2021-01-19T03:46:44.640Z">
+<meta property="article:modified_time" content="2021-01-19T04:23:13.825Z">
 <meta property="article:author" content="GetLxc">
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
@@ -27,6 +27,7 @@
     <link rel="icon" href="/favicon.png">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
+<link rel="stylesheet" type="text/css" href="/./search.css">
   <style type="text/css">
   
     #container.show {
@@ -163,7 +164,39 @@
 	<div class="mobile-mask" style="display:none" q-show="isShow"></div>
 </nav>
 
-      <div id="wrapper" class="body-wrap">
+
+        
+          <div class="page-header" style="">
+              
+              <span>🍻  
+                  <span id="jinrishici-sentence" title="今日诗词">正在加载今日诗词....</span>
+              </span>
+              <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+          
+              
+              <script type="text/javascript" src="/js/search.js"></script>
+              <span id="local-search" class="local-search local-search-plugin" style="">
+                <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
+                <i id="local-search-icon-search" class="icon" aria-hidden="true" title="站内搜索">🔍</i>
+                <div id="local-search-result" class="local-search-result-cls"></div>
+              </span>
+          
+              <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+              <script>
+                  if ($('.local-search').size()) {
+                    $.getScript('/js/search.js', function() {
+                      searchFunc("/search.xml", 'local-search-input', 'local-search-result');
+                    });
+                  }
+              </script>
+              
+          </div>
+          
+          
+            <div id="wrapper" class="body-wrap">
+
+
+        
         <div class="menu-l">
           <div class="canvas-wrap">
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
