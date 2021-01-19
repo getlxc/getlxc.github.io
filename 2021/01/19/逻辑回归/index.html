@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://getlxc.github.io">
-  <title>留言板 | 刘星辰的博客</title>
+  <title>逻辑回归 | 刘星辰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="来都来了,留个言再走如何？          .comments {       margin: 30px;       padding: 10px;       background: #fff;     }     @media screen and (max-width: 800px) {       .comments {         margin: auto;         pa">
-<meta property="og:type" content="website">
-<meta property="og:title" content="留言板">
-<meta property="og:url" content="https://getlxc.github.io/messageWall/index.html">
+  <meta name="description" content="逻辑回归是经典的分类问题，不要被名字所误导。这篇文章将详细的讲述逻辑回归的各种问题，主要参考是吴恩达老师的机器学习和一些大佬的笔记之类的，希望一起加油，学好这个常规但是非常厉害的分类算法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="逻辑回归">
+<meta property="og:url" content="https://getlxc.github.io/2021/01/19/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/index.html">
 <meta property="og:site_name" content="刘星辰的博客">
-<meta property="og:description" content="来都来了,留个言再走如何？          .comments {       margin: 30px;       padding: 10px;       background: #fff;     }     @media screen and (max-width: 800px) {       .comments {         margin: auto;         pa">
+<meta property="og:description" content="逻辑回归是经典的分类问题，不要被名字所误导。这篇文章将详细的讲述逻辑回归的各种问题，主要参考是吴恩达老师的机器学习和一些大佬的笔记之类的，希望一起加油，学好这个常规但是非常厉害的分类算法。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-01-19T03:23:08.000Z">
-<meta property="article:modified_time" content="2021-01-19T03:30:13.416Z">
+<meta property="article:published_time" content="2021-01-19T04:26:09.000Z">
+<meta property="article:modified_time" content="2021-01-19T04:28:44.316Z">
 <meta property="article:author" content="GetLxc">
-<meta property="article:tag" content="博客">
+<meta property="article:tag" content="逻辑回归，机器学习">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="刘星辰的博客" type="application/atom+xml">
@@ -204,20 +204,20 @@
           <div id="js-content" class="content-ll">
             
 
-<article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+<article id="post-逻辑回归" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      留言板
+      逻辑回归
     </h1>
   
 
         
-        <a href="/messageWall/index.html" class="archive-article-date">
-  	<time datetime="2021-01-19T03:23:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-19</time>
+        <a href="/2021/01/19/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/" class="archive-article-date">
+  	<time datetime="2021-01-19T04:26:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-19</time>
 </a>
         
           <div style="margin-top:10px;">
@@ -225,7 +225,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">74字</span>
+        <span class="post-count">95字</span>
       </span>
     </span>
 
@@ -246,86 +246,16 @@
       
         <!-- 
         
-          
-<font>来都来了,留个言再走如何？</font>
+          <p>逻辑回归是经典的分类问题，不要被名字所误导。这篇文章将详细的讲述逻辑回归的各种问题，主要参考是吴恩达老师的机器学习和一些大佬的笔记之类的，希望一起加油，学好这个常规但是非常厉害的分类算法。</p>
+<a id="more"></a>
 
-<section id="comments" class="comments">
-  <style>
-    .comments {
-      margin: 30px;
-      padding: 10px;
-      background: #fff;
-    }
-    @media screen and (max-width: 800px) {
-      .comments {
-        margin: auto;
-        padding: 10px;
-        background: #fff;
-      }
-    }
-  </style>
-  <div id="vcomment" class="comment"></div>
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  <script>
-    var notify = true;
-    var verify = false;
-    window.onload = function () {
-      new Valine({
-        el: ".comment",
-        notify: notify,
-        verify: verify,
-        app_id: "x4vK6NKjGP1VyxFvykeywDkw-gzGzoHsz",
-        app_key: "iRxdLiHhczUC4I51dwkz0qpv",
-        placeholder: "评论下相册吧！！",
-        avatar:
-          "https://cdn.jsdelivr.net/gh/getlxc/getlxc.github.io@master/img/head_icon.jpg",
-      });
-    };
-  </script>
-</section>
-
+<h2 id="什么是逻辑回归"><a href="#什么是逻辑回归" class="headerlink" title="什么是逻辑回归"></a>什么是逻辑回归</h2>
            -->
 
-        
-<font>来都来了,留个言再走如何？</font>
+        <p>逻辑回归是经典的分类问题，不要被名字所误导。这篇文章将详细的讲述逻辑回归的各种问题，主要参考是吴恩达老师的机器学习和一些大佬的笔记之类的，希望一起加油，学好这个常规但是非常厉害的分类算法。</p>
+<a id="more"></a>
 
-<section id="comments" class="comments">
-  <style>
-    .comments {
-      margin: 30px;
-      padding: 10px;
-      background: #fff;
-    }
-    @media screen and (max-width: 800px) {
-      .comments {
-        margin: auto;
-        padding: 10px;
-        background: #fff;
-      }
-    }
-  </style>
-  <div id="vcomment" class="comment"></div>
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  <script>
-    var notify = true;
-    var verify = false;
-    window.onload = function () {
-      new Valine({
-        el: ".comment",
-        notify: notify,
-        verify: verify,
-        app_id: "x4vK6NKjGP1VyxFvykeywDkw-gzGzoHsz",
-        app_key: "iRxdLiHhczUC4I51dwkz0qpv",
-        placeholder: "评论下相册吧！！",
-        avatar:
-          "https://cdn.jsdelivr.net/gh/getlxc/getlxc.github.io@master/img/head_icon.jpg",
-      });
-    };
-  </script>
-</section>
-
+<h2 id="什么是逻辑回归"><a href="#什么是逻辑回归" class="headerlink" title="什么是逻辑回归"></a>什么是逻辑回归</h2>
       
 
       
@@ -354,6 +284,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">逻辑回归，机器学习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -404,7 +345,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://getlxc.github.io/messageWall/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://getlxc.github.io/2021/01/19/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -419,6 +360,16 @@
 
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2021/01/19/%E6%96%B0%E7%9A%84%E4%B8%80%E5%A4%A9/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">新的一天</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -498,7 +449,7 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
