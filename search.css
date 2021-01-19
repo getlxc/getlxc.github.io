@@ -158,7 +158,8 @@
 }
 .local-search-plugin .icon {
     position: relative;
-    left: -30px;
+    left: -35px;
+    top: 1px;
     color: #999;
-    cursor: pointer
+    cursor: pointer;
 }
