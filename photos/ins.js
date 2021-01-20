@@ -119,8 +119,8 @@
               for (var i = 0, len = data.link.length; i < len; i++) {
                   /*var minSrc = 'https://raw.githubusercontent.com/ainimini/Picture/master/' + data.link[i];
                   var src = 'https://raw.githubusercontent.com/ainimini/Picture/master/' + data.link[i];*/
-                  var minSrc = 'https://cdn.jsdelivr.net/gh/getlxc/getlxc.github.io@photo/min_photos/' + data.link[i];
-                  var src = 'https://cdn.jsdelivr.net/gh/getlxc/getlxc.github.io@photo/photos/' + data.link[i];
+                  var minSrc = 'https://gitee.com/getlxc/getlxc/raw/photo/min_photos/' + data.link[i];
+                  var src = 'https://gitee.com/getlxc/getlxc/raw/photo/photos/' + data.link[i];
                   var type = data.type[i];
                   var target = src + (type === 'video' ? '.mp4' : '.jpg');
                   src += '';
