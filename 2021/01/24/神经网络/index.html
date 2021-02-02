@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210201221132703.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dldEx4Yw==,size_16,color_FFFFFF,t_70#pic_center">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210201221132703.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dldEx4Yw==,size_16,color_FFFFFF,t_70#pic_center">
 <meta property="article:published_time" content="2021-01-24T04:46:23.000Z">
-<meta property="article:modified_time" content="2021-02-02T03:32:54.220Z">
+<meta property="article:modified_time" content="2021-02-02T03:34:22.470Z">
 <meta property="article:author" content="GetLxc">
 <meta property="article:tag" content="机器学习">
 <meta property="article:tag" content="神经网络">
@@ -255,6 +255,9 @@
           <blockquote>
 <p>神经网络是一个非线性算法，非线性就体现在激活函数上。通俗解释一下，Y = x * a * b * c  （abc是常数）我们总可以找到一个d = a * b *c      但是如果 Y = ln(10 * sin（cos（x））) 并且我们规定只有cosx&gt;0.5时，再进行sin()   sin(cos（x）)&gt;0.1时再进行ln（）.就像生物的神经元，刺激达到一定的程度，再释放神经递质再传递给下一个神经元。</p>
 </blockquote>
+<a id="more"></a>
+
+
 <h2 id="1-神经网络能干什么？"><a href="#1-神经网络能干什么？" class="headerlink" title="1. 神经网络能干什么？"></a>1. 神经网络能干什么？</h2><p>线性回归和逻辑回归虽然可以解决简单问题但是不他能解决复杂的问题。我们假设用离散数学的与、或、非运算来描述下图，下面的四个球不能用一个运算给分类，所以单一的层不好使（图2），这种可以用两层的有两种运算得来的结果。[(!x $\bigwedge$!y)$\bigvee$(x$\bigwedge$y)]   x,y $\in$(0,1) .这样的话我们可以设置两层网络来求解这个问题（图3）。神经网络可以说是有很多个逻辑回归而组成的网络（分层）。可以有强大的作用。<br><img src="https://img-blog.csdnimg.cn/20210201174018981.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dldEx4Yw==,size_1,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><center>图一</center></p>
 <p><img src="https://img-blog.csdnimg.cn/20210201174418378.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dldEx4Yw==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
 <h2 id="2-神经网络简介"><a href="#2-神经网络简介" class="headerlink" title="2. 神经网络简介"></a>2. 神经网络简介</h2><blockquote>
@@ -314,6 +317,9 @@
         <blockquote>
 <p>神经网络是一个非线性算法，非线性就体现在激活函数上。通俗解释一下，Y = x * a * b * c  （abc是常数）我们总可以找到一个d = a * b *c      但是如果 Y = ln(10 * sin（cos（x））) 并且我们规定只有cosx&gt;0.5时，再进行sin()   sin(cos（x）)&gt;0.1时再进行ln（）.就像生物的神经元，刺激达到一定的程度，再释放神经递质再传递给下一个神经元。</p>
 </blockquote>
+<a id="more"></a>
+
+
 <h2 id="1-神经网络能干什么？"><a href="#1-神经网络能干什么？" class="headerlink" title="1. 神经网络能干什么？"></a>1. 神经网络能干什么？</h2><p>线性回归和逻辑回归虽然可以解决简单问题但是不他能解决复杂的问题。我们假设用离散数学的与、或、非运算来描述下图，下面的四个球不能用一个运算给分类，所以单一的层不好使（图2），这种可以用两层的有两种运算得来的结果。[(!x $\bigwedge$!y)$\bigvee$(x$\bigwedge$y)]   x,y $\in$(0,1) .这样的话我们可以设置两层网络来求解这个问题（图3）。神经网络可以说是有很多个逻辑回归而组成的网络（分层）。可以有强大的作用。<br><img src="https://img-blog.csdnimg.cn/20210201174018981.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dldEx4Yw==,size_1,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><center>图一</center></p>
 <p><img src="https://img-blog.csdnimg.cn/20210201174418378.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dldEx4Yw==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
 <h2 id="2-神经网络简介"><a href="#2-神经网络简介" class="headerlink" title="2. 神经网络简介"></a>2. 神经网络简介</h2><blockquote>
