@@ -189,7 +189,7 @@
       <link href="photos/videos.html"/>
       <url>photos/videos.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" href="./ins.css"><div class="photos-btn-wrap"><a class="photos-btn" href="/photos">Photos</a><a class="photos-btn active" href="/photos/videos.html">Videos</a></div><center>    <h1>十里洋场烟花地</h1></center><hr><center>    <div class="video-container">        <iframe height="80%" width="80%" src="https://cdn.jsdelivr.net/gh/getlxc/getlxc.github.io@master/video/shanghai.mp4" frameborder="0" allowfullscreen></iframe>    </div></center>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" href="./ins.css"><div class="photos-btn-wrap"><a class="photos-btn" href="/photos">Photos</a><a class="photos-btn active" href="/photos/videos.html">Videos</a></div><center>    <h1>2020总结视频</h1></center><hr><center>    <div class="video-container">        <iframe height="80%" width="80%" src="https://cdn.jsdelivr.net/gh/getlxc/getlxc.github.io@master/zj.MP4" frameborder="0" allowfullscreen></iframe>    </div></center>]]></content>
       
     </entry>
     
