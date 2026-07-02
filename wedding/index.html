@@ -1,0 +1,1220 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f2ea">
+  <title>刘星辰 & 孙丽华 | 婚礼邀请</title>
+  <meta name="description" content="刘星辰与孙丽华的婚礼邀请与相册。">
+  <link rel="canonical" href="https://getlxc.github.io/wedding/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="刘星辰 & 孙丽华 | 婚礼邀请">
+  <meta property="og:description" content="愿见证我们，把爱过成生活。">
+  <meta property="og:url" content="https://getlxc.github.io/wedding/">
+  <meta property="og:image" content="https://getlxc.github.io/wedding/assets/photos/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f8f3ec;
+      --milk: #fffdf8;
+      --ink: #2f2b28;
+      --soft: #766c64;
+      --line: rgba(47, 43, 40, .13);
+      --sage: #6f8373;
+      --rose: #bd7b7e;
+      --clay: #b79a82;
+      --gold: #b9955f;
+      --shadow: 0 24px 70px rgba(54, 45, 37, .16);
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      min-height: 100%;
+      scroll-behavior: smooth;
+      background: var(--paper);
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      letter-spacing: 0;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      background:
+        linear-gradient(115deg, rgba(255, 255, 255, .64), rgba(255, 255, 255, 0) 38%),
+        radial-gradient(circle at 18% 20%, rgba(189, 123, 126, .12), transparent 30%),
+        radial-gradient(circle at 90% 35%, rgba(111, 131, 115, .12), transparent 28%),
+        linear-gradient(180deg, #fbf7f0, #efe2d5 54%, #f8f3ec);
+    }
+
+    img, video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    button {
+      font: inherit;
+      color: inherit;
+    }
+
+    .page {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .music {
+      position: fixed;
+      right: 14px;
+      top: max(14px, env(safe-area-inset-top));
+      z-index: 30;
+      display: inline-grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255,255,255,.56);
+      border-radius: 50%;
+      background: rgba(255,255,255,.42);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 12px 34px rgba(48, 42, 34, .16);
+      cursor: pointer;
+    }
+
+    .music svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .music.is-playing {
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+
+    .scroll-ctrl {
+      position: fixed;
+      right: 14px;
+      bottom: max(18px, env(safe-area-inset-bottom));
+      z-index: 30;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      min-height: 40px;
+      padding: 0 13px;
+      border: 1px solid rgba(47,43,40,.12);
+      border-radius: 999px;
+      background: rgba(255,253,248,.58);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 12px 34px rgba(48, 42, 34, .13);
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .scroll-ctrl svg {
+      width: 15px;
+      height: 15px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .hero {
+      min-height: 94svh;
+      position: relative;
+      isolation: isolate;
+      display: grid;
+      align-items: end;
+      padding: max(22px, env(safe-area-inset-top)) 18px 34px;
+      background: #302e29;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(180deg, rgba(32,28,24,.08) 0%, rgba(32,28,24,.34) 44%, rgba(32,28,24,.9) 100%);
+    }
+
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      transform: scale(1.04);
+      animation: photoBreathe 18s ease-in-out infinite alternate;
+    }
+
+    .hero-content {
+      width: min(100%, 980px);
+      margin: 0 auto;
+    }
+
+    .kicker {
+      margin: 0 0 14px;
+      color: rgba(255,253,248,.78);
+      font-size: 12px;
+      line-height: 1.6;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 0;
+      color: #fffdf8;
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+      font-size: clamp(48px, 16vw, 88px);
+      line-height: .96;
+      font-weight: 500;
+    }
+
+    .hero-copy {
+      max-width: 35rem;
+      margin: 22px 0 0;
+      color: rgba(255,253,248,.91);
+      font-size: 16px;
+      line-height: 1.95;
+    }
+
+    .names {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #fffdf8;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .names i {
+      width: 52px;
+      height: 1px;
+      background: rgba(255,253,248,.62);
+    }
+
+    .event-chip {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: rgba(255,253,248,.9);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .event-chip span {
+      padding: 7px 10px;
+      border: 1px solid rgba(255,253,248,.34);
+      border-radius: 999px;
+      background: rgba(255,255,255,.13);
+      backdrop-filter: blur(12px);
+    }
+
+    .down {
+      position: absolute;
+      left: 50%;
+      bottom: 14px;
+      width: 22px;
+      height: 34px;
+      border: 1px solid rgba(255,253,248,.58);
+      border-radius: 999px;
+      transform: translateX(-50%);
+    }
+
+    .down::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 8px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #fffdf8;
+      transform: translateX(-50%);
+      animation: drop 1.8s ease-in-out infinite;
+    }
+
+    section {
+      position: relative;
+      padding: 56px 18px;
+    }
+
+    .inner {
+      width: min(100%, 1060px);
+      margin: 0 auto;
+    }
+
+    .split {
+      display: grid;
+      gap: 24px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--rose);
+      font-size: 12px;
+      line-height: 1.5;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .title {
+      margin: 0;
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+      font-size: clamp(31px, 8vw, 52px);
+      line-height: 1.16;
+      font-weight: 500;
+    }
+
+    .lead, .quote {
+      margin: 18px 0 0;
+      color: var(--soft);
+      font-size: 16px;
+      line-height: 1.95;
+    }
+
+    .quote {
+      margin: 0;
+      padding-left: 16px;
+      border-left: 2px solid var(--gold);
+    }
+
+    .intro {
+      background: linear-gradient(180deg, var(--paper), #fffaf3);
+    }
+
+    .memory-grid {
+      margin-top: 32px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .timeline {
+      margin-top: 20px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .note {
+      padding: 20px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.5);
+      box-shadow: 0 18px 48px rgba(74, 59, 45, .07);
+    }
+
+    .note b {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--sage);
+      font-size: 15px;
+    }
+
+    .note p {
+      margin: 0;
+      color: #5d524a;
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+    .timeline .note {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .timeline time {
+      color: var(--rose);
+      font-weight: 800;
+    }
+
+    .story {
+      background: #efe4d8;
+    }
+
+    .story-track {
+      margin-top: 34px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .story-card {
+      display: grid;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.48);
+      border-radius: var(--radius);
+      background: var(--milk);
+      box-shadow: var(--shadow);
+    }
+
+    .story-card .photo {
+      min-height: 320px;
+      aspect-ratio: 4 / 5;
+      background: #ddd3c9;
+    }
+
+    .story-card.wide .photo {
+      aspect-ratio: 16 / 11;
+    }
+
+    .caption {
+      padding: 18px 18px 20px;
+    }
+
+    .caption h3 {
+      margin: 0;
+      font-size: 19px;
+      line-height: 1.35;
+    }
+
+    .caption p {
+      margin: 10px 0 0;
+      color: var(--soft);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .wedding {
+      background: #fbf7f0;
+    }
+
+    .editorial {
+      margin-top: 34px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: #dfd4c7;
+      box-shadow: 0 18px 48px rgba(54, 45, 37, .11);
+    }
+
+    .frame.tall { aspect-ratio: 3 / 4; }
+    .frame.land { aspect-ratio: 4 / 3; }
+    .frame.slim { aspect-ratio: 9 / 13; }
+
+    .frame.contain {
+      display: grid;
+      place-items: center;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.72), rgba(238,228,216,.9)),
+        #efe4d8;
+    }
+
+    .frame.contain img {
+      width: calc(100% - 18px);
+      height: calc(100% - 18px);
+      object-fit: contain;
+    }
+
+    .frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(255,255,255,.42);
+      border-radius: inherit;
+      pointer-events: none;
+    }
+
+    .wedding-album {
+      margin-top: 14px;
+      display: grid;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .album-photo {
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
+      min-height: 280px;
+      padding: 9px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.58);
+      box-shadow: 0 16px 42px rgba(54, 45, 37, .1);
+      position: relative;
+      transform: translateZ(0);
+    }
+
+    .album-photo img {
+      max-width: 100%;
+      object-fit: contain;
+      border-radius: 5px;
+      background: #eadfd3;
+      transition: transform 1.15s cubic-bezier(.2,.8,.2,1), filter 1.15s ease;
+    }
+
+    .album-photo::before {
+      content: "";
+      position: absolute;
+      inset: 9px;
+      z-index: 1;
+      border-radius: 5px;
+      pointer-events: none;
+      background: linear-gradient(105deg, transparent 12%, rgba(255,255,255,.28) 38%, transparent 58%);
+      opacity: 0;
+      transform: translateX(-46%);
+    }
+
+    .album-photo::after {
+      content: "";
+      position: absolute;
+      inset: 9px;
+      z-index: 2;
+      border: 1px solid rgba(255,255,255,.62);
+      border-radius: 5px;
+      pointer-events: none;
+    }
+
+    .album-photo.in-view {
+      animation: photoFloat .9s cubic-bezier(.2,.8,.2,1) both;
+    }
+
+    .album-photo.in-view::before {
+      animation: lightSweep 1.55s ease-out .18s both;
+    }
+
+    .album-photo.in-view img {
+      transform: scale(1.012);
+      filter: saturate(1.02) contrast(1.01);
+    }
+
+    .album-photo.portrait { aspect-ratio: 3 / 4; }
+    .album-photo.landscape { aspect-ratio: 4 / 3; }
+
+    .album-quote {
+      position: relative;
+      overflow: hidden;
+      padding: 34px 22px;
+      border-top: 1px solid rgba(47,43,40,.13);
+      border-bottom: 1px solid rgba(47,43,40,.13);
+      background:
+        linear-gradient(120deg, rgba(255,255,255,.56), rgba(255,255,255,.12)),
+        rgba(239, 228, 216, .38);
+    }
+
+    .album-quote::before {
+      content: "Love";
+      position: absolute;
+      right: 18px;
+      top: 12px;
+      color: rgba(183, 154, 130, .18);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 48px;
+      font-style: italic;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .album-quote p {
+      position: relative;
+      margin: 0;
+      color: #423a34;
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+      font-size: clamp(22px, 6vw, 34px);
+      line-height: 1.72;
+    }
+
+    .album-quote small {
+      display: block;
+      margin-top: 14px;
+      color: var(--sage);
+      font-size: 12px;
+      line-height: 1.6;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .bride {
+      color: #26231f;
+      background: linear-gradient(180deg, #ece1d3, #f8f3ec);
+    }
+
+    .bride-gallery {
+      margin-top: 34px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .bride-gallery .feature {
+      grid-column: 1 / -1;
+      aspect-ratio: 4 / 5;
+    }
+
+    .love-letter {
+      margin-top: 26px;
+      padding: 24px 20px;
+      border: 1px solid rgba(47,43,40,.12);
+      border-radius: var(--radius);
+      background: rgba(255,253,248,.55);
+      box-shadow: 0 18px 52px rgba(54, 45, 37, .1);
+    }
+
+    .love-letter p {
+      margin: 0;
+      color: #4b443e;
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+      font-size: 21px;
+      line-height: 1.85;
+    }
+
+    .film {
+      background: #2f2b28;
+      color: #fffdf8;
+    }
+
+    .film .eyebrow, .film .lead {
+      color: rgba(255,253,248,.74);
+    }
+
+    .video-wrap {
+      margin-top: 30px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: #1c1a18;
+      box-shadow: 0 30px 90px rgba(0,0,0,.35);
+    }
+
+    .video-wrap video {
+      height: auto;
+      max-height: 78svh;
+      object-fit: contain;
+      background: #111;
+    }
+
+    .finale {
+      min-height: 86svh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background: linear-gradient(180deg, #fbf7f0, #efe0d1);
+    }
+
+    .vow {
+      width: min(100%, 760px);
+      margin: 0 auto;
+      padding: 34px 20px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .vow p {
+      margin: 0;
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+      font-size: clamp(25px, 7vw, 42px);
+      line-height: 1.55;
+    }
+
+    .date {
+      margin-top: 22px;
+      color: var(--sage);
+      font-size: 14px;
+      line-height: 1.8;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .final-detail {
+      margin-top: 24px;
+      display: grid;
+      gap: 9px;
+      color: #5f554e;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .final-detail b {
+      color: var(--ink);
+    }
+
+    .reveal {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+      filter: blur(0);
+      transition: opacity .95s cubic-bezier(.2,.8,.2,1), transform .95s cubic-bezier(.2,.8,.2,1), filter .95s ease;
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+      filter: blur(0);
+      animation: revealRise .9s cubic-bezier(.2,.8,.2,1) both;
+    }
+
+    .stagger > * {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity .85s cubic-bezier(.2,.8,.2,1), transform .85s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .stagger.in > * {
+      opacity: 1;
+      transform: translateY(0);
+      animation: revealRise .82s cubic-bezier(.2,.8,.2,1) both;
+    }
+
+    .stagger.in > *:nth-child(2) { transition-delay: .08s; }
+    .stagger.in > *:nth-child(3) { transition-delay: .16s; }
+    .stagger.in > *:nth-child(4) { transition-delay: .24s; }
+    .stagger.in > *:nth-child(5) { transition-delay: .32s; }
+
+    @keyframes photoBreathe {
+      from { transform: scale(1.04) translate3d(-1%, 0, 0); }
+      to { transform: scale(1.12) translate3d(1%, -1%, 0); }
+    }
+
+    @keyframes drop {
+      0% { opacity: 0; transform: translate(-50%, 0); }
+      35% { opacity: 1; }
+      100% { opacity: 0; transform: translate(-50%, 14px); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 12px 34px rgba(48, 42, 34, .16); }
+      50% { box-shadow: 0 12px 34px rgba(48, 42, 34, .16), 0 0 0 8px rgba(255, 253, 248, .24); }
+    }
+
+    @keyframes revealRise {
+      from {
+        opacity: .42;
+        transform: translate3d(0, 26px, 0) scale(.99);
+        filter: blur(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+        filter: blur(0);
+      }
+    }
+
+    @keyframes photoFloat {
+      from {
+        opacity: .72;
+        transform: translate3d(0, 20px, 0) scale(.992);
+      }
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+    }
+
+    @keyframes lightSweep {
+      0% {
+        opacity: 0;
+        transform: translateX(-50%);
+      }
+      30% {
+        opacity: .72;
+      }
+      100% {
+        opacity: 0;
+        transform: translateX(50%);
+      }
+    }
+
+    @media (min-width: 720px) {
+      .hero {
+        min-height: 92vh;
+        padding: 60px 64px 74px;
+      }
+
+      section {
+        padding: 84px 44px;
+      }
+
+      .split {
+        grid-template-columns: .9fr 1.1fr;
+      }
+
+      .memory-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .timeline {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .timeline .note {
+        grid-template-columns: 1fr;
+      }
+
+      .story-track {
+        grid-template-columns: repeat(6, 1fr);
+      }
+
+      .story-card {
+        grid-column: span 3;
+      }
+
+      .story-card.wide {
+        grid-column: span 4;
+      }
+
+      .story-card.compact {
+        grid-column: span 2;
+      }
+
+      .editorial {
+        grid-template-columns: repeat(6, 1fr);
+        grid-auto-flow: dense;
+      }
+
+      .frame.tall { grid-column: span 2; }
+      .frame.land { grid-column: span 3; }
+      .frame.slim { grid-column: span 2; }
+
+      .wedding-album {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .album-photo.landscape {
+        grid-column: span 2;
+      }
+
+      .album-quote {
+        grid-column: span 4;
+        padding: 46px 52px;
+      }
+
+      .album-quote p {
+        max-width: 820px;
+      }
+
+      .bride-gallery {
+        grid-template-columns: 1.2fr .85fr .85fr;
+        align-items: stretch;
+      }
+
+      .bride-gallery .feature {
+        grid-column: span 1;
+        grid-row: span 2;
+        aspect-ratio: auto;
+        min-height: 640px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .scroll-ctrl span {
+        display: none;
+      }
+
+      .scroll-ctrl {
+        width: 42px;
+        padding: 0;
+        justify-content: center;
+      }
+
+      .story-card .photo {
+        min-height: 290px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .001ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <audio id="bgm" preload="auto" loop autoplay playsinline>
+    <source src="assets/audio/soft-wedding.m4a" type="audio/mp4">
+    <source src="assets/audio/soft-wedding.wav" type="audio/wav">
+  </audio>
+
+  <button class="music" id="musicBtn" type="button" aria-label="播放或暂停背景音乐">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
+  </button>
+  <button class="scroll-ctrl" id="scrollBtn" type="button" aria-label="开启或暂停自动浏览">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"/><path d="m6 13 6 6 6-6"/></svg>
+    <span>自动浏览</span>
+  </button>
+
+  <main class="page">
+    <section class="hero" aria-label="我们相爱">
+      <div class="hero-photo"><img src="assets/photos/hero.jpg" alt="两个人在海边山路的合影"></div>
+      <div class="hero-content reveal">
+        <p class="kicker">Wedding Invitation · Our Story</p>
+        <h1>我们相爱</h1>
+        <p class="hero-copy">爱不是某一天忽然盛大的决定，而是后来每一次出发、每一次回头、每一张合影里，我们都越来越确定：身边这个人，就是想一起走很久的人。</p>
+        <div class="names"><span>刘星辰</span><i></i><span>孙丽华</span></div>
+        <div class="event-chip" aria-label="婚礼信息">
+          <span>2026.08.02 星期日</span>
+          <span>11:00</span>
+          <span>银座佳悦大酒店</span>
+        </div>
+      </div>
+      <div class="down" aria-hidden="true"></div>
+    </section>
+
+    <section class="intro">
+      <div class="inner">
+        <div class="split reveal">
+          <div>
+            <p class="eyebrow">About Us</p>
+            <h2 class="title">从两个人，到一个家</h2>
+          </div>
+          <p class="quote">我们一起看过夜色里的灯，也一起走过山水和海风。有人把爱情写成誓言，我们把它过成日常：一起拍照、一起赶路、一起在人群里找到彼此。</p>
+        </div>
+        <div class="memory-grid stagger">
+          <article class="note">
+            <b>初见以后的确定</b>
+            <p>不是轰轰烈烈地宣布，而是在越来越多普通日子里，慢慢把对方放进未来。</p>
+          </article>
+          <article class="note">
+            <b>一起出发的默契</b>
+            <p>山海、城市、夜晚、乐园，每一段路都变成了我们的共同记忆。</p>
+          </article>
+          <article class="note">
+            <b>一起回家的温柔</b>
+            <p>最珍贵的不是去过哪里，而是每次转身，都有人稳稳在身边。</p>
+          </article>
+        </div>
+        <div class="timeline stagger">
+          <article class="note">
+            <time>2022</time>
+            <p>相爱。和你在一起的，就是最好的日子。</p>
+          </article>
+          <article class="note">
+            <time>2025</time>
+            <p>订婚。我们走过许多地方，最想抵达的是一个叫“我们”的家。</p>
+          </article>
+          <article class="note">
+            <time>2026</time>
+            <p>结婚。特别鸣谢你，为我制造了更多快乐。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="story">
+      <div class="inner">
+        <div class="split reveal">
+          <div>
+            <p class="eyebrow">Love Chapter</p>
+            <h2 class="title">把世界慢慢走成我们</h2>
+          </div>
+          <p class="quote">我们没有把爱停在一句“我愿意”里。它在每一次牵挂里，在每一次旅行里，在毕业的见证、海边的风、夜晚的灯光和相互靠近的瞬间里。</p>
+        </div>
+
+        <div class="story-track stagger">
+          <article class="story-card wide">
+            <div class="photo"><img src="assets/photos/night.jpg" alt="两个人在灯会夜色中的合影"></div>
+            <div class="caption">
+              <h3>在人群很热闹的时候，只想靠近你</h3>
+              <p>灯光把夜晚照得很漂亮，而我记住的，是你在我身边。原来浪漫不是远处的灿烂，是我一转头，就能看见你。</p>
+            </div>
+          </article>
+          <article class="story-card compact">
+            <div class="photo"><img src="assets/photos/mountain.jpg" alt="两个人在山水边的合影"></div>
+            <div class="caption">
+              <h3>山河很远，身边很近</h3>
+              <p>风景会变，想和你同行这件事没有变。</p>
+            </div>
+          </article>
+          <article class="story-card compact">
+            <div class="photo"><img src="assets/photos/stone.jpg" alt="两个人从石洞中向镜头挥手"></div>
+            <div class="caption">
+              <h3>保留一点幼稚，给彼此快乐</h3>
+              <p>一起认真生活，也一起把日子过得轻盈、好笑、可爱。</p>
+            </div>
+          </article>
+          <article class="story-card compact">
+            <div class="photo"><img src="assets/photos/graduation.jpg" alt="两个人在毕业纪念背景前合影"></div>
+            <div class="caption">
+              <h3>见证成长，也参与你的以后</h3>
+              <p>重要的时刻，我们都希望对方在场。</p>
+            </div>
+          </article>
+          <article class="story-card wide">
+            <div class="photo"><img src="assets/photos/palm.jpg" alt="海边椰林中的旅行照片"></div>
+            <div class="caption">
+              <h3>把海风、阳光和心动，都带回家</h3>
+              <p>走过许多地方，最后发现最想抵达的不是某个目的地，而是一个叫“我们”的家。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="wedding">
+      <div class="inner">
+        <div class="split reveal">
+          <div>
+            <p class="eyebrow">Wedding Portraits</p>
+            <h2 class="title">把郑重，留给相守的一生</h2>
+          </div>
+          <p class="quote">穿上礼服的那一刻，很多平凡的陪伴都有了庄重的答案。我们不是走向一张照片，而是走向从今以后每一个清晨与黄昏。这里多留一些画面，把完整的人、完整的笑、完整的相拥都放进来。</p>
+        </div>
+        <div class="editorial stagger">
+          <div class="frame tall contain"><img src="assets/photos/wedding-red-close.jpg" alt="红墙前的新郎新娘对视"></div>
+          <div class="frame land contain"><img src="assets/photos/wedding-palace.jpg" alt="古建筑前的婚纱照"></div>
+          <div class="frame slim contain"><img src="assets/photos/wedding-green.jpg" alt="草地上的婚纱照"></div>
+          <div class="frame land contain"><img src="assets/photos/wedding-studio.jpg" alt="白色背景前的婚纱照"></div>
+          <div class="frame slim contain"><img src="assets/photos/wedding-window.jpg" alt="窗边的婚纱照"></div>
+        </div>
+        <div class="wedding-album stagger" aria-label="更多婚纱照">
+          <div class="album-photo portrait"><img src="assets/photos/wedding-more/4X2A1373-2--jpg.jpg" alt="红墙前的婚纱照"></div>
+          <div class="album-photo landscape"><img src="assets/photos/wedding-more/4X2A1381-2--jpg.jpg" alt="宫墙前的婚纱合影"></div>
+          <div class="album-photo portrait"><img src="assets/photos/wedding-more/4X2A1472-2--jpg.jpg" alt="建筑与水边的婚纱照"></div>
+          <div class="album-photo portrait"><img src="assets/photos/wedding-more/4X2A1499-2--jpg.jpg" alt="水边的婚纱照"></div>
+          <article class="album-quote">
+            <p>我喜欢你穿婚纱的样子，也喜欢你把日子过得闪闪发亮的样子。以后每一次抬头，我都想先看见你。</p>
+            <small>From XINGCHEN to LIHUA</small>
+          </article>
+          <div class="album-photo landscape"><img src="assets/photos/wedding-more/4X2A1518-2--jpg.jpg" alt="远景婚纱合影"></div>
+          <div class="album-photo landscape"><img src="assets/photos/wedding-more/4X2A1551-2--jpg.jpg" alt="宫苑婚纱合影"></div>
+          <div class="album-photo portrait"><img src="assets/photos/wedding-more/4X2A1561-2--jpg.jpg" alt="草地远景婚纱照"></div>
+          <div class="album-photo landscape"><img src="assets/photos/wedding-more/4X2A1601-2--jpg.jpg" alt="树下婚纱照"></div>
+          <div class="album-photo landscape"><img src="assets/photos/wedding-more/4X2A1610-2--jpg.jpg" alt="树下相拥婚纱照"></div>
+          <div class="album-photo landscape"><img src="assets/photos/wedding-more/4X2A1618-2--jpg.jpg" alt="新郎新娘牵手婚纱照"></div>
+          <div class="album-photo landscape"><img src="assets/photos/wedding-more/4X2A1651-2--jpg.jpg" alt="草地坐姿婚纱照"></div>
+          <div class="album-photo landscape"><img src="assets/photos/wedding-more/4X2A1717-2--jpg.jpg" alt="逆光相拥婚纱照"></div>
+          <article class="album-quote">
+            <p>有些光落在照片里，有些光落在心里。后来我才知道，最温柔的风景，是你愿意把手交给我。</p>
+            <small>Promise</small>
+          </article>
+          <div class="album-photo landscape"><img src="assets/photos/wedding-more/4X2A1744-2--jpg.jpg" alt="阳光下的婚纱照"></div>
+          <div class="album-photo landscape"><img src="assets/photos/wedding-more/4X2A1793-2--jpg.jpg" alt="廊柱前婚纱照"></div>
+          <div class="album-photo landscape"><img src="assets/photos/wedding-more/4X2A1821-2--jpg.jpg" alt="白色建筑前婚纱照"></div>
+          <div class="album-photo landscape"><img src="assets/photos/wedding-more/4X2A1830-2--jpg.jpg" alt="白色廊柱下的婚纱照"></div>
+          <article class="album-quote">
+            <p>我们会有很多普通的清晨，也会有很多平凡的黄昏。但只要是和你一起，普通就会变成值得珍藏。</p>
+            <small>Everyday With You</small>
+          </article>
+          <div class="album-photo landscape"><img src="assets/photos/wedding-more/9-1818328-2--jpg.jpg" alt="影棚婚纱合影"></div>
+          <div class="album-photo portrait"><img src="assets/photos/wedding-more/9-1818336-2--jpg.jpg" alt="简约棚拍婚纱照"></div>
+          <div class="album-photo landscape"><img src="assets/photos/wedding-more/9-1818355-2--jpg.jpg" alt="棚拍互动婚纱照"></div>
+          <div class="album-photo portrait"><img src="assets/photos/wedding-more/9-1818371-2--jpg.jpg" alt="白色背景婚纱照"></div>
+          <div class="album-photo landscape"><img src="assets/photos/wedding-more/9-1818382-2--jpg.jpg" alt="新娘微笑婚纱照"></div>
+          <div class="album-photo portrait"><img src="assets/photos/wedding-more/9-1818397-2--jpg.jpg" alt="新郎新娘牵手棚拍"></div>
+          <div class="album-photo portrait"><img src="assets/photos/wedding-more/9-1818401-2--jpg.jpg" alt="正式棚拍婚纱照"></div>
+          <article class="album-quote">
+            <p>我想把余生写得慢一点：慢慢陪你吃饭，慢慢陪你散步，慢慢把每一年都过成我们喜欢的模样。</p>
+            <small>Our Lifetime</small>
+          </article>
+          <div class="album-photo landscape"><img src="assets/photos/wedding-more/9-1818402-2--jpg.jpg" alt="俏皮棚拍婚纱照"></div>
+          <div class="album-photo portrait"><img src="assets/photos/wedding-more/9-1818408-2--jpg.jpg" alt="黑白礼服婚纱照"></div>
+          <div class="album-photo portrait"><img src="assets/photos/wedding-more/9-1818413-2--jpg.jpg" alt="礼服站姿婚纱照"></div>
+          <div class="album-photo portrait"><img src="assets/photos/wedding-more/9-1818426-2--jpg.jpg" alt="新郎单人礼服照"></div>
+          <article class="album-quote">
+            <p>谢谢你来到我的生命里，让我明白“以后”不是遥远的词，而是每天醒来都能继续爱你的确定。</p>
+            <small>Thank You For Coming</small>
+          </article>
+          <div class="album-photo portrait"><img src="assets/photos/wedding-more/9-1818459-2--jpg.jpg" alt="室内欧式婚纱照"></div>
+          <div class="album-photo landscape"><img src="assets/photos/wedding-more/9-1818466-2--jpg.jpg" alt="室内坐姿婚纱照"></div>
+          <div class="album-photo landscape"><img src="assets/photos/wedding-more/9-1818488-2--jpg.jpg" alt="窗边婚纱照"></div>
+          <div class="album-photo landscape"><img src="assets/photos/wedding-more/9-1818517-2--jpg.jpg" alt="窗前新郎新娘婚纱照"></div>
+          <div class="album-photo landscape"><img src="assets/photos/wedding-more/9-1818529-2--jpg.jpg" alt="窗边光影婚纱照"></div>
+          <article class="album-quote">
+            <p>愿我们在热闹里记得牵手，在疲惫时记得拥抱，在很久很久以后，仍然觉得今天的选择刚刚好。</p>
+            <small>Always</small>
+          </article>
+          <div class="album-photo landscape"><img src="assets/photos/wedding-more/IMG-4262-1--JPG.jpg" alt="正式合影婚纱照"></div>
+          <div class="album-photo landscape"><img src="assets/photos/wedding-more/IMG-4263-1--JPG.jpg" alt="红墙抱起婚纱照"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bride">
+      <div class="inner">
+        <div class="split reveal">
+          <div>
+            <p class="eyebrow">For Her</p>
+            <h2 class="title">她是我心里最柔软的光</h2>
+          </div>
+          <p class="quote">这一章，只放她。因为在我眼里，她不只是照片里好看的人，也是把普通日子照亮的人。看见她笑，我就知道自己为什么想认真经营一个未来。</p>
+        </div>
+        <div class="bride-gallery stagger">
+          <div class="frame feature"><img src="assets/photos/bride-lake.jpg" alt="女主在山水边微笑"></div>
+          <div class="frame slim"><img src="assets/photos/bride-sea.jpg" alt="女主坐在海边礁石"></div>
+          <div class="frame slim"><img src="assets/photos/bride-sunset.jpg" alt="女主站在夕阳前"></div>
+          <div class="frame land"><img src="assets/photos/bride-soft.jpg" alt="女主在生活瞬间里的笑容"></div>
+          <div class="frame land"><img src="assets/photos/thumb-snow.jpg" alt="冬日里的两人自拍"></div>
+        </div>
+        <div class="love-letter reveal">
+          <p>我想把所有偏爱都给你：走路时慢一点等你，拍照时多一点耐心看你，生活里多一点坚定护着你。你不用一直很勇敢，因为以后会有我和你一起。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="film">
+      <div class="inner">
+        <div class="split reveal">
+          <div>
+            <p class="eyebrow">Our Film</p>
+            <h2 class="title">把动态的心动，再看一遍</h2>
+          </div>
+          <p class="lead">这里放入你刚导出的视频，已经复制到本地。网页离线打开或局域网扫码访问，都不需要依赖外部视频链接。</p>
+        </div>
+        <div class="video-wrap reveal">
+          <video src="assets/love-video.mp4" controls playsinline preload="metadata" poster="assets/photos/hero.jpg"></video>
+        </div>
+      </div>
+    </section>
+
+    <section class="finale">
+      <div class="inner">
+        <div class="vow reveal">
+          <p>往后的日子，愿我们仍然一起出发，一起回家。</p>
+          <div class="date">刘星辰 & 孙丽华 · 敬邀<br>愿见证我们，把爱过成生活</div>
+          <div class="final-detail" aria-label="婚礼最终信息">
+            <span><b>婚礼日期</b> / 2026年8月2日 星期日</span>
+            <span><b>农历</b> / 六月二十 11:00</span>
+            <span><b>婚礼地址</b> / 银座佳悦大酒店</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const bgm = document.getElementById('bgm');
+    const musicBtn = document.getElementById('musicBtn');
+    const scrollBtn = document.getElementById('scrollBtn');
+    const loveVideo = document.querySelector('.video-wrap video');
+    let autoScroll = true;
+    let rafId = 0;
+    let resumeMusicAfterVideo = false;
+
+    bgm.volume = 0.42;
+
+    function syncMusicState() {
+      musicBtn.classList.toggle('is-playing', !bgm.paused);
+      musicBtn.setAttribute('aria-label', bgm.paused ? '播放背景音乐' : '暂停背景音乐');
+    }
+
+    function tryPlayMusic() {
+      bgm.play().then(syncMusicState).catch(syncMusicState);
+    }
+
+    musicBtn.addEventListener('click', () => {
+      if (bgm.paused) {
+        tryPlayMusic();
+      } else {
+        bgm.pause();
+        syncMusicState();
+      }
+    });
+
+    loveVideo.addEventListener('play', () => {
+      resumeMusicAfterVideo = !bgm.paused;
+      bgm.pause();
+      syncMusicState();
+    });
+
+    function resumeMusicFromVideo() {
+      if (resumeMusicAfterVideo) {
+        tryPlayMusic();
+        resumeMusicAfterVideo = false;
+      }
+    }
+
+    loveVideo.addEventListener('pause', resumeMusicFromVideo);
+    loveVideo.addEventListener('ended', resumeMusicFromVideo);
+
+    ['pointerdown', 'touchstart', 'keydown'].forEach((eventName) => {
+      window.addEventListener(eventName, tryPlayMusic, { once: true, passive: true });
+    });
+
+    function stepScroll() {
+      if (!autoScroll) return;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      if (window.scrollY < max - 3) {
+        window.scrollBy(0, window.innerWidth < 640 ? 0.34 : 0.46);
+        rafId = requestAnimationFrame(stepScroll);
+      } else {
+        autoScroll = false;
+        scrollBtn.querySelector('span').textContent = '重新浏览';
+      }
+    }
+
+    function setAutoScroll(next) {
+      autoScroll = next;
+      cancelAnimationFrame(rafId);
+      scrollBtn.querySelector('span').textContent = next ? '暂停浏览' : '自动浏览';
+      if (next) rafId = requestAnimationFrame(stepScroll);
+    }
+
+    scrollBtn.addEventListener('click', () => setAutoScroll(!autoScroll));
+    window.addEventListener('wheel', () => setAutoScroll(false), { passive: true });
+    window.addEventListener('touchmove', () => setAutoScroll(false), { passive: true });
+
+    const revealTargets = [...document.querySelectorAll('.reveal, .stagger')];
+    const photoMotionTargets = [...document.querySelectorAll('.album-photo, .album-quote')];
+    let revealTicking = false;
+
+    function revealVisible() {
+      revealTicking = false;
+      const viewport = window.innerHeight || document.documentElement.clientHeight;
+      revealTargets.forEach((el) => {
+        if (el.classList.contains('in')) return;
+        const rect = el.getBoundingClientRect();
+        if (rect.top < viewport * 1.08 && rect.bottom > -viewport * 0.22) {
+          el.classList.add('in');
+        }
+      });
+    }
+
+    function queueRevealCheck() {
+      if (revealTicking) return;
+      revealTicking = true;
+      requestAnimationFrame(revealVisible);
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('in');
+      });
+    }, { threshold: 0.02, rootMargin: '35% 0px 35% 0px' });
+
+    const photoMotionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          photoMotionObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '18% 0px 18% 0px' });
+
+    revealTargets.forEach((el) => observer.observe(el));
+    photoMotionTargets.forEach((el) => photoMotionObserver.observe(el));
+    window.addEventListener('scroll', queueRevealCheck, { passive: true });
+    window.addEventListener('resize', queueRevealCheck);
+    window.addEventListener('load', () => {
+      tryPlayMusic();
+      revealVisible();
+      setTimeout(() => setAutoScroll(true), 1300);
+      setTimeout(revealVisible, 300);
+      setTimeout(revealVisible, 1200);
+    });
+  </script>
+</body>
+</html>
